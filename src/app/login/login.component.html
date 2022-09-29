@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div id="user-data">
+                    <div class="form-group" class="col-md-12">
+                        <label for="email1">E-Mail</label>
+                        <input type="email" id="email1" class="form-control" name="email" ngModel 
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                        required />
+                    </div>
+                    <div class="form-group" class="col-md-12">
+                        <label for="password1">Password</label>
+                        <input type="password" id="password1" class="form-control" name="password" ngModel required />
+                    </div>
+                    <div class="form-group" class="col-md-12">
+                        <label for="type"></label>
+                        <select name="type" id="type" class="form-control" (change)="selectChangeHandler($event)">
+                            <option value="">Choose Any One.</option>
+                            <option value="patient" >Patient</option>
+                            <option value="doctor">Doctor</option> 
+                        </select>
+                    </div>
+                    <div class="div form-group col-md-12" *ngIf="!login">
+                        If You are not registered Please register first.
+                    </div>
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

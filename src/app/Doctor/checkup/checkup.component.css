@@ -1,0 +1,11 @@
+.infoDiv{
+    width: 370px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: rgb(36, 31, 107);
+    border-style: solid;
+    margin-bottom: 7px;
+    border-width: 1px;
+    align-items: center;
+    justify-content: center;
+}

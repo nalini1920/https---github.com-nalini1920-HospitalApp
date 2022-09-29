@@ -1,0 +1,45 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(f3)" #f3="ngForm">
+        <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Doctors</label>
+        <select name="type" id="type" class="form-control" (change)="selectChangeHandler($event)">
+                <option value="">Choose Any One.</option>
+                <option value="Dr Hetvi Parikh">Dr Hetvi Parikh-Orthopedic</option>
+                <option value="Dr Nalini Patel">Dr Nalini Patel-Psychologist</option>
+                <option value="Dr Freya Shah">Dr Freya Shah-Dentist</option> 
+        </select>
+        </div>
+        <div class="form-group row">
+        <div class="md-form mb-4 pink-textarea active-pink-textarea">
+            <label for="form21">Problems</label>
+            <textarea id="form21" class="md-textarea form-control" rows="3" name="problem" ngModel></textarea>
+        </div>
+        </div>
+        <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label">Choose Date</label><br>
+            <input type="date" name="date" id="date" class="form-control" ngModel>
+            <!-- <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>           -->
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Appointment Time</label>
+            <select name="time" class="form-control" (change)="selectChangeHandler1($event)">
+                <option>Default select</option>
+                <option value="9:00am to 1:00pm">9:00am to 1:00pm</option>
+                <option value="4:00pm to 6:00pm">4:00pm to 6:00pm</option>
+            </select>
+        </div>
+        <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </div>
+    </form>
+</div>

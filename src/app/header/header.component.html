@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+            <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+        </button>
+        <a href="/" class="navbar-brand">Hospital Management</a>
+      </div>
+
+  
+      <div class="collapse navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+        <ul class="nav navbar-nav" *ngIf="!checkLogin()">
+          <li routerLinkActive="active"><a routerLink="/login" style="cursor: pointer;">Log In</a></li>
+          <li routerLinkActive="active"><a routerLink="/register" style="cursor: pointer;">Register</a></li>
+        </ul>
+        <ul class="nav navbar-nav" *ngIf="checkLogin() && checkPatient()">
+          <li routerLinkActive="active"><a routerLink="/login" style="cursor: pointer;">History</a></li>
+          <li routerLinkActive="active"><a routerLink="/appointment" style="cursor: pointer;">Appointment</a></li>
+        </ul>
+        <ul class="nav navbar-nav" *ngIf="checkLogin() && !checkPatient()">
+          <li routerLinkActive="active"><a routerLink="/history" style="cursor: pointer;">History</a></li>
+          <li routerLinkActive="active"><a routerLink="/checkup" style="cursor: pointer;">PatientCheckup</a></li>
+          <li routerLinkActive="active"><a routerLink="/register" style="cursor: pointer;">AppointmentSchedule</a></li>
+          <!-- <li><a routerLink="/login" style="cursor: pointer;" (click)="logout()">Log Out</a></li> -->
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" appDropdown>
+            <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="cursor: pointer;"(click)="onSaveData()">About Us</a></li>
+              <li><a style="cursor: pointer;"(click)="onFetchData()">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,52 @@
+<app-default *ngIf="isDefault"></app-default>
+<!-- <div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <form (ngSubmit)="onSubmit(f1)" #f1="ngForm">
+            <div class="input-group">
+                <span class="input-group-addon">MRN</span>
+                <input id="msg" type="text" class="form-control" name="mrn" placeholder="Enter MRN" ngModel required>
+            </div>
+            <center><button type="submit" class="btn btn-large btn-success" style="margin-top: 40px; width: 100px; height: 40px; font-size: larger;">Go</button></center>
+        </form>
+        
+    </div>
+</div> -->
+<div class="row" *ngIf="check()">
+    <div class="col-xs-12 col-md-4">
+        <h2>Personal Details: </h2>
+        <h4>Name:  <span>{{result.name}}</span></h4>
+        <h4>MRN:  <span>{{result.mrn}}</span></h4>
+        <h4>BirthDate:  {{result.birthDate}}</h4>
+    </div>
+</div>
+<div class="row" style="margin: 3% 0;" *ngIf="check()">
+    <form>
+        <div class="col-md-4" style="padding-left: 0; padding-right: 0;">
+            <input class="form-control" type="text" name="patient" #patient  required>
+        </div>
+        <div class="col-md-4" >
+            <button class="btn btn-primary" style="border-radius: 50%;" (click)="onClick()">+</button>
+        </div>
+        <div class="col-md-4" style="padding-left: 0; padding-right: 0;" *ngIf="isOpen" >
+            <div class="infoDiv" *ngFor="let i of patients">{{i}}</div>
+            
+        </div>
+    </form>
+</div>
+<div class="row" style="margin: 3% 0;" *ngIf="check()">
+    <form>
+        <div class="col-md-4" style="padding-left: 0; padding-right: 0;">
+            <input class="form-control" type="text" placeholder="Search">
+        </div>
+        <div class="col-md-4" >
+            <button class="btn btn-primary">Search</button>
+            <button class="btn btn-primary" style="border-radius: 50%; margin-left: 5px;">+</button>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-success" (click)="onSave()">Save</button>
+    </div>
+</div>
+

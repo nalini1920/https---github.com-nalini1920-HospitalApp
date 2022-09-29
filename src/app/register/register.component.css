@@ -1,0 +1,19 @@
+.container {
+    margin-top: 120px;
+  }
+  
+  button{
+    margin-left: 15px;
+  }
+  
+  input{
+    margin:  10px 0;
+  }
+  
+  label{
+    margin-top: 5px;
+  }
+  input.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+ }
